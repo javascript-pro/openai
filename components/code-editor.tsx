@@ -40,7 +40,7 @@ function PureCodeEditor({ content, saveContent, status }: EditorProps) {
         editorRef.current = null;
       }
     };
-  }, []);
+  }, [content]);
 
   useEffect(() => {
     if (editorRef.current) {
