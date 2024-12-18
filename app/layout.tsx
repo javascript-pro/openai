@@ -11,8 +11,7 @@ import './globals.css';
 const { 
   themeColor,
   title,
-  description, 
-  cdn,
+  description,
   url,
   og,
 } = config;
