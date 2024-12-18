@@ -1,3 +1,6 @@
+import React from "react";
+import pJSON from "../package.json";
+import config from "../config.json";
 import type { Metadata } from 'next';
 import { Toaster } from 'sonner';
 
@@ -5,18 +8,28 @@ import { ThemeProvider } from '@/components/theme-provider';
 
 import './globals.css';
 
+const { 
+  themeColor,
+  title,
+  description,
+  url,
+  og,
+} = config;
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://chat.vercel.ai'),
-  title: 'Next.js Chatbot Template',
-  description: 'Next.js chatbot template using the AI SDK.',
+  metadataBase: new URL('https://goldlabel.pro'),
+  title: `Goldlabel ${pJSON.version}`,
+  description: 'Open Source Next.js chatbot template using Vercel AI SDK.',
 };
 
 export const viewport = {
-  maximumScale: 1, // Disable auto-zoom on mobile Safari
+  maximumScale: 1,
 };
 
-const LIGHT_THEME_COLOR = 'hsl(0 0% 100%)';
-const DARK_THEME_COLOR = 'hsl(240deg 10% 3.92%)';
+const LIGHT_THEME_COLOR = config.theme.light.primary;
+const DARK_THEME_COLOR = config.theme.dark.primary;
+
+
 const THEME_COLOR_SCRIPT = `\
 (function() {
   var html = document.documentElement;
@@ -43,10 +56,6 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      // `next-themes` injects an extra classname to the body element to avoid
-      // visual flicker before hydration. Hence the `suppressHydrationWarning`
-      // prop is necessary to avoid the React hydration mismatch warning.
-      // https://github.com/pacocoursey/next-themes?tab=readme-ov-file#with-app
       suppressHydrationWarning
     >
       <head>
@@ -55,6 +64,19 @@ export default async function RootLayout({
             __html: THEME_COLOR_SCRIPT,
           }}
         />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href={`/png/apple-touch-icon.png`}
+        />
+        <link rel="manifest" href="/manifest.json"></link>
+        <meta name="theme-color" content={themeColor} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${title} ${pJSON.version}`} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={og} />
+        <meta property="og:url" content={url} />
+
       </head>
       <body className="antialiased">
         <ThemeProvider
