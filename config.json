@@ -1,0 +1,26 @@
+{
+    "title": "Ask Oliver",
+    "description": "NextJS, DynamoDB & Auth0",
+    "adminEmail": "oliver@goldlabel.pro",
+    "url": "https://goldlabel.pro",
+    "apiUrl": "https://goldlabel.pro/api",
+    "icon": "oliver",
+    "logo": "/svg/betaLogo.svg",
+    "og": "/jpg/og.jpg",
+    "defaultDark": false,
+    "themeColor": "#203347",
+    "theme": {
+        "light": {
+            "primary": "#203347",
+            "secondary": "#F7B500",
+            "background": "#FFF",
+            "paper": "#F2F6F8"
+        },
+        "dark": {
+            "primary": "#F7B500",
+            "secondary": "#E3EBF0",
+            "background": "#203347",
+            "paper": "#203347"
+        }
+    }
+}
