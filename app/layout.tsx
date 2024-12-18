@@ -69,7 +69,7 @@ export default async function RootLayout({
           sizes="180x180"
           href={`/png/apple-touch-icon.png`}
         />
-        <link rel="manifest" href="manifest.json"></link>
+        <link rel="manifest" href="/manifest.json"></link>
         <meta name="theme-color" content={themeColor} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={`${title} ${pJSON.version}`} />
