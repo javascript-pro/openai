@@ -16,14 +16,9 @@ interface SuggestedActionsProps {
 function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   const suggestedActions = [
     {
-      title: 'What is the weather',
-      label: 'in San Francisco?',
-      action: 'What is the weather in San Francisco?',
-    },
-    {
-      title: 'Help me write code to',
-      label: 'demonstrate the djikstra algorithm!',
-      action: 'Help me write code to demonstrate the djikstra algorithm!',
+      title: 'Ask Oliver',
+      label: 'He knows everything',
+      action: 'What is the weather in Saarbrücken, Germany',
     },
   ];
 
