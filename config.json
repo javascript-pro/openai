@@ -8,7 +8,7 @@
     "logo": "/svg/betaLogo.svg",
     "og": "/jpg/og.jpg",
     "defaultDark": false,
-    "themeColor": "#203347",
+    "themeColor": "#474747",
     "theme": {
         "light": {
             "primary": "#203347",

@@ -29,7 +29,6 @@ export const viewport = {
 const LIGHT_THEME_COLOR = config.theme.light.primary;
 const DARK_THEME_COLOR = config.theme.dark.primary;
 
-
 const THEME_COLOR_SCRIPT = `\
 (function() {
   var html = document.documentElement;
@@ -67,8 +66,18 @@ export default async function RootLayout({
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`/png/apple-touch-icon.png`}
+          href={`/favicon/apple-touch-icon.png`}
         />
+
+        {/* 
+        
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Ask Oliver" />
+<link rel="manifest" href="/site.webmanifest" />
+        */}
         <link rel="manifest" href="/manifest.json"></link>
         <meta name="theme-color" content={themeColor} />
         <meta property="og:type" content="website" />
