@@ -60,6 +60,8 @@ export function Console({ consoleOutputs, setConsoleOutputs }: ConsoleProps) {
   return consoleOutputs.length > 0 ? (
     <>
       <div
+        role="separator"
+        tabIndex={0}
         className="h-2 w-full fixed cursor-ns-resize z-50"
         onMouseDown={startResizing}
         style={{ bottom: height - 4 }}
