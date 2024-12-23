@@ -3,9 +3,7 @@ import pJSON from "../package.json";
 import config from "../config.json";
 import type { Metadata } from 'next';
 import { Toaster } from 'sonner';
-
 import { ThemeProvider } from '@/components/theme-provider';
-
 import './globals.css';
 
 const { 
@@ -79,7 +77,6 @@ export default async function RootLayout({
         <meta property="og:description" content={description} />
         <meta property="og:image" content={og} />
         <meta property="og:url" content={url} />
-
       </head>
       <body className="antialiased">
         <ThemeProvider
