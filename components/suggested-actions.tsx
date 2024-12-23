@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
-import { ChatRequestOptions, CreateMessage, Message } from 'ai';
+import type { ChatRequestOptions, CreateMessage, Message } from 'ai';
 import { memo } from 'react';
 
 interface SuggestedActionsProps {
@@ -17,8 +17,8 @@ function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   const suggestedActions = [
     {
       title: 'Ask Oliver',
-      label: 'He knows everything',
-      action: 'What is the weather in Saarbrücken, Germany',
+      label: 'He knows everything especially about Anime',
+      action: 'Hi Ollie, How are you doing? What is the latest Anime news?',
     },
   ];
 
