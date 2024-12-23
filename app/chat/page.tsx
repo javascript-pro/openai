@@ -1,21 +1,27 @@
 import React from "react";
-import { Metadata } from 'next';
+import { cookies } from 'next/headers';
+import { Chat } from '@/components/chat';
+import { DEFAULT_MODEL_NAME, models } from '@/lib/ai/models';
+import { generateUUID } from '@/lib/utils';
 
-// Optionally define metadata (sets <title>, <meta> tags, etc.)
-export const metadata: Metadata = {
-  title: 'Home - Public Landing Page',
-  description: 'A publicly accessible landing page',
-};
+export default async function Page() {
+  const id = generateUUID();
 
-// If you want *strict* static generation (no dynamic content), use:
-export const dynamic = 'error'; 
-// or, if you want to do Incremental Static Regeneration, for example:
-// export const revalidate = 3600; // re-generate every hour
+  const cookieStore = await cookies();
+  const modelIdFromCookie = cookieStore.get('model-id')?.value;
 
-export default function HomePage() {
+  const selectedModelId =
+    models.find((model) => model.id === modelIdFromCookie)?.id ||
+    DEFAULT_MODEL_NAME;
+
   return (
-    <main>
-        <h1>I am chat</h1>
-    </main>
+    <Chat
+      key={id}
+      id={id}
+      initialMessages={[]}
+      selectedModelId={selectedModelId}
+      selectedVisibilityType="private"
+      isReadonly={false}
+    />
   );
 }
