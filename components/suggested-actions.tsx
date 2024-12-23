@@ -15,10 +15,26 @@ interface SuggestedActionsProps {
 
 function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   const suggestedActions = [
+
+    {
+      title: 'Work',
+      label: "JavaScript Whatever the Weather",
+      action: "You are assisting my job as a JavaScript developer with 20 years experience",
+    },
+    {
+      title: 'Life',
+      label: "It is Christmas. We're cooking",
+      action: "What are the traditional british trimmings for a Christmas dinner?",
+    },
+    {
+      title: 'Balance',
+      label: "Diamond Hard Science Fiction",
+      action: "Let's discuss Liu Cixin, Arthur C Clarke, Stephen Baxter and other similar work",
+    },
     {
       title: 'Ask Oliver',
-      label: 'He knows everything especially about Anime',
-      action: 'Hi Ollie, How are you doing? What is the latest Anime news?',
+      label: 'Cos he knows everything',
+      action: "Hi Ollie, How are you doing? What's the latest Anime news?",
     },
   ];
 
